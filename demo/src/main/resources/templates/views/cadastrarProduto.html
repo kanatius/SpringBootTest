@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <script src="bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light" id="navbarTop">
+        <span class="navbar-brand mb-0 h1">Meu Estoque</span>
+    </nav>
+    <table id="pagina">
+        <tr>
+            <td id="navbarEsquerda">
+                <div class="list-group">
+                    <a href="cadastrarProduto" class="list-group-item list-group-item-action">Cadastrar
+                        Produtos</a>
+                    <a href="meuEstoque" class="list-group-item list-group-item-action">Listar Produtos</a>
+                </div>
+            </td>
+            <td id="tdfolha">
+                <legend>Cadastrar Produto</legend>
+                <div id="folha">
+                    <form>      
+                        <div class="form-group row">
+                            <label for="produto" class="col-sm-2 col-form-label">Nome do Produto</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="produto"
+                                    placeholder="Digite o nome do produto aqui">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="preco" class="col-sm-2 col-form-label">Preço</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="preco" placeholder="exemplo: 0,55">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="quantidade" class="col-sm-2 col-form-label">Quantidade</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="quantidade" placeholder="0">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

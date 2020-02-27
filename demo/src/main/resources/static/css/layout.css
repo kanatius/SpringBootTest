@@ -1,0 +1,32 @@
+#navbarEsquerda{
+    height: 500px;
+    min-height: 500px;
+    background-color: #f8f9fa;
+    /* border-right: 1px solid gray; */
+    vertical-align: top;
+    padding-top: 20px;
+}
+#navbarTop{
+    border-bottom: 1px solid gray;
+}
+#navbarEsquerda ul{
+    list-style: none;
+    padding: 0;
+}
+#tdfolha{
+    padding: 25px;
+    text-align: center;
+    width: 90%;
+}
+#mensBemVindo{
+    text-align: center;
+}
+#folha{
+    padding: 35px;
+    /* border: 1px solid gray; */
+    border-radius: 8px;
+}
+
+.escuro{
+	background-color: #383838;
+}
