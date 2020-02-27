@@ -1,2 +1,2 @@
 # SpringBootTest
-Aprendendo Spring
+Projeto de Estoque para Disciplina da faculdade
