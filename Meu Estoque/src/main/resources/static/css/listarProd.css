@@ -1,12 +1,5 @@
-.gridPadrao{
-    border-right: 1px dotted;
-    border-bottom: 1px dotted;
-}
-.gridRight{
-    border-bottom: 1px dotted;   
-}
 .gridProduto{
-    border-color: black;
+    border: 1px solid gray;
     padding: 10px;
     border-radius: 10px;
     background-color: #f8f9fa;
@@ -22,4 +15,13 @@
 }
 legend#tituloUpPage{
 	color : white;
+}
+
+#folha{
+	background-color: #383838;
+}
+
+#folha legend{
+	text-align: center;
+	color: white;
 }

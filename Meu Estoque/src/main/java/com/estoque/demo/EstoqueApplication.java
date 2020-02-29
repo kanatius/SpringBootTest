@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EntityScan("models")
-@ComponentScan(basePackages={"controllers"})
+@ComponentScan(basePackages={"controllers", "dao","dao.interfaces", "service"})
 public class EstoqueApplication {
 
 	public static void main(String[] args) {

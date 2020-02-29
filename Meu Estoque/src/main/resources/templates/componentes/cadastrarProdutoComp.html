@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+	
+	<div th:fragment="cadastro" id="cadastroProdutoDiv">
+		<link rel="stylesheet" href="css/cadastroProduto.css">
+		<section>
+		<legend>Cadastrar Produto</legend>
+            <div id="folha">
+                <form th:action="@{/produto/cadastrar}" th:object="${produto}">      
+                    <div class="form-group row">
+                        <label for="produto" class="col-sm-2 col-form-label">Nome do Produto</label>
+                        <div class="col-sm-10">
+                            <input type="text" th:field="*{nome}" class="form-control" id="produto"
+                                placeholder="Digite o nome do produto aqui">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="preco" class="col-sm-2 col-form-label">Preço</label>
+                        <div class="col-sm-10">
+                            <input type="number" step="0.01" th:field="*{preco}" class="form-control" id="preco" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="quantidade" class="col-sm-2 col-form-label">Quantidade</label>
+                        <div class="col-sm-10">
+                            <input type="number" th:field="*{quantidade}" class="form-control" id="quantidade" placeholder="0">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Cadastrar</button>
+                </form>
+            </div>
+		</section>
+	</div>
+	
+	
+	</body>
+</html>
+	

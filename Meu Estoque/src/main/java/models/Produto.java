@@ -19,7 +19,7 @@ public class Produto extends EntidadeAbstrata{
 	@Column(columnDefinition = "integer DEFAULT 0")
 	private int quantidade;
 	
-	@Column(columnDefinition = "money DEFAULT 0.00")
+	@Column()
 	private float preco;
 	
 	@ManyToOne

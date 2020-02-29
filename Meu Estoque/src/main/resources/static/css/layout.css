@@ -14,7 +14,6 @@
     padding: 0;
 }
 #tdfolha{
-    padding: 25px;
     text-align: center;
     width: 90%;
 }
@@ -24,7 +23,6 @@
 #folha{
     padding: 35px;
     /* border: 1px solid gray; */
-    border-radius: 8px;
 }
 
 .escuro{
