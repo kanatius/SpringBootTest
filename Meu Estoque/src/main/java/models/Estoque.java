@@ -1,37 +1,42 @@
 package models;
 
-import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.ElementCollection;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+//import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+
+@SuppressWarnings("serial")
 @Entity
-public class Estoque implements Serializable{
+@Table(name = "Estoques")
+public class Estoque extends EntidadeAbstrata{
 
-	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id;
+	@Column(length = 45)
+	String dono;
 
-	@ElementCollection
+	@OneToMany(mappedBy = "estoque", cascade = CascadeType.ALL)
 	List<Produto> produtos;
 	
+	
+	public String getDono() {
+		return dono;
+	}
+
+	public void setDono(String dono) {
+		this.dono = dono;
+	}
+
 	public List<Produto> getProdutos() {
 		return produtos;
 	}
 
-	public long getId() {
-		return id;
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
 	}
-
-	public void setId(long id) {
-		this.id = id;
-	}	
 	
 	
 }

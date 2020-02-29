@@ -1,58 +1,59 @@
 package models;
 
-import java.io.Serializable;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+
+@SuppressWarnings("serial")
 @Entity
-public class Produto implements Serializable{
+@Table(name = "Produtos")
+public class Produto extends EntidadeAbstrata{
 	
-	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id;
+	@Column(length = 255, unique = true)
+	private String nome;
+	private int quantidade;
 	
-	String nome;
-	int quantidade;
-	float preco;
+	@Column(columnDefinition = "money DEFAULT 0.00")
+	private float preco;
 	
-	Produto(String nome, int quantidade, float preco){
-		this.nome = nome;
-		this.quantidade = quantidade;
-		this.preco = preco;
-	}
-	
+	@ManyToOne
+	@JoinColumn(name = "id_estoque_fk", nullable = false)
+	private Estoque estoque;
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public int getQuantidade() {
 		return quantidade;
 	}
+
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
+
 	public float getPreco() {
 		return preco;
 	}
+
 	public void setPreco(float preco) {
 		this.preco = preco;
 	}
-	
-	public long getId() {
-		return id;
+
+	public Estoque getEstoque() {
+		return estoque;
 	}
 
-	public void setId(long id) {
-		this.id = id;
-	}	
-	
-	
+	public void setEstoque(Estoque estoque) {
+		this.estoque = estoque;
+	} 
 	
 }

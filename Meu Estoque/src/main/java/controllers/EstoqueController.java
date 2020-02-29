@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-public class EstoqueController {
+public class EstoqueController{
 	
 	@RequestMapping("/meuEstoque")
 	public String meuEstoquePage() {
