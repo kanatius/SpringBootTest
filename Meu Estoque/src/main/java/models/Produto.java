@@ -13,8 +13,10 @@ import javax.persistence.Table;
 public class Produto extends EntidadeAbstrata{
 	
 	
-	@Column(length = 255, unique = true)
+	@Column(length = 255, unique = true, nullable = false)
 	private String nome;
+	
+	@Column(columnDefinition = "integer DEFAULT 0")
 	private int quantidade;
 	
 	@Column(columnDefinition = "money DEFAULT 0.00")
