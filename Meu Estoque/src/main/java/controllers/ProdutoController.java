@@ -22,7 +22,6 @@ public class ProdutoController {
 	
 	@GetMapping("/cadastrar")
 	public String cadastrarProduto(Produto produto) {
-		
 		Estoque estoque = estoqueService.findById((long) 1);
 		System.out.println(estoque.toString());
 		produto.setEstoque(estoque);

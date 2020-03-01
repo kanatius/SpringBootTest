@@ -9,127 +9,40 @@
 		<link rel="stylesheet" href="css/listarProd.css">
 		<section>
 		<legend>Meu Estoque</legend>
-		<div>
-            <div class="container">
-                <div class="row">
-                    <div class="col gridPadrao gridProduto">
-                        <span class="produtoNome">arroz</span><br>
-                        Preço: R$ 2,50<br>
-                        Quantidade: 25<br>
-                        <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
-                        <button type="button" class="btn btn-warning" style="font-size:10px">Adicionar</button>
-                    </div>
-                    <div class="col gridPadrao gridProduto">
-                        <span class="produtoNome">Feijão</span><br>
-                        Preço: R$ 5,00<br>
-                        Quantidade: 45<br>
-                        <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
-                        <button type="button" class="btn btn-warning" style="font-size:10px">Adicionar</button>
-                    </div>
-                    <div class="col gridRight gridProduto">
-                        <span class="produtoNome">Macarrão</span><br>
-                        Preço: R$ 2,00<br>
-                        Quantidade: 16<br>
-                        <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
-                        <button type="button" class="btn btn-warning" style="font-size:10px">Adicionar</button>
-                    </div>
-                    <div class="col gridRight gridProduto">
-                        <span class="produtoNome">Açucar</span><br>
-                        Preço: R$ 2,00<br>
-                        Quantidade: 16<br>
-                        <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
-                        <button type="button" class="btn btn-warning" style="font-size:10px">Adicionar</button>
-                    </div>
-                </div><div class="row">
-                    <div class="col gridPadrao gridProduto">
-                        <span class="produtoNome">arroz</span><br>
-                        Preço: R$ 2,50<br>
-                        Quantidade: 25<br>
-                        <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
-                        <button type="button" class="btn btn-warning" style="font-size:10px">Adicionar</button>
-                    </div>
-                    <div class="col gridPadrao gridProduto">
-                        <span class="produtoNome">Feijão</span><br>
-                        Preço: R$ 5,00<br>
-                        Quantidade: 45<br>
-                        <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
-                        <button type="button" class="btn btn-warning" style="font-size:10px">Adicionar</button>
-                    </div>
-                    <div class="col gridRight gridProduto">
-                        <span class="produtoNome">Macarrão</span><br>
-                        Preço: R$ 2,00<br>
-                        Quantidade: 16<br>
-                        <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
-                        <button type="button" class="btn btn-warning" style="font-size:10px">Adicionar</button>
-                    </div>
-                    <div class="col gridRight gridProduto">
-                        <span class="produtoNome">Açucar</span><br>
-                        Preço: R$ 2,00<br>
-                        Quantidade: 16<br>
-                        <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
-                        <button type="button" class="btn btn-warning" style="font-size:10px">Adicionar</button>
-                    </div>
-                </div><div class="row">
-                    <div class="col gridPadrao gridProduto">
-                        <span class="produtoNome">arroz</span><br>
-                        Preço: R$ 2,50<br>
-                        Quantidade: 25<br>
-                        <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
-                        <button type="button" class="btn btn-warning" style="font-size:10px">Adicionar</button>
-                    </div>
-                    <div class="col gridPadrao gridProduto">
-                        <span class="produtoNome">Feijão</span><br>
-                        Preço: R$ 5,00<br>
-                        Quantidade: 45<br>
-                        <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
-                        <button type="button" class="btn btn-warning" style="font-size:10px">Adicionar</button>
-                    </div>
-                    <div class="col gridRight gridProduto">
-                        <span class="produtoNome">Macarrão</span><br>
-                        Preço: R$ 2,00<br>
-                        Quantidade: 16<br>
-                        <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
-                        <button type="button" class="btn btn-warning" style="font-size:10px">Adicionar</button>
-                    </div>
-                    <div class="col gridRight gridProduto">
-                        <span class="produtoNome">Açucar</span><br>
-                        Preço: R$ 2,00<br>
-                        Quantidade: 16<br>
-                        <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
-                        <button type="button" class="btn btn-warning" style="font-size:10px">Adicionar</button>
-                    </div>
+		
+		<!-- Modal -->
+		<div id="myModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+		
+		    <!-- Modal content-->
+		    <div class="modal-content modal-sm">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Modal Header</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>Some text in the modal.</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		
+		  </div>
+		</div>
+	
+        <div class="container">
+            <div class="row" >
+                <div class="col gridProduto" th:each="produto, row : ${produtos}">
+                    <span class="produtoNome" th:text="${produto.nome}"></span><br>
+                    Preço: <span th:text="${produto.preco}">R$ 2,50</span>
+					<br>
+                    Quantidade: <span th:text="${produto.quantidade}">25</span><br>
+                    <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
+                    <button type="button" class="btn btn-warning" style="font-size:10px" data-toggle="modal" data-target="#myModal">Adicionar</button>
+                	<br>
                 </div>
-                <div class="row">
-                    <div class="col gridPadrao gridProduto">
-                        <span class="produtoNome">arroz</span><br>
-                        Preço: R$ 2,50<br>
-                        Quantidade: 25<br>
-                        <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
-                        <button type="button" class="btn btn-warning" style="font-size:10px">Adicionar</button>
-                    </div>
-                    <div class="col gridPadrao gridProduto">
-                        <span class="produtoNome">Feijão</span><br>
-                        Preço: R$ 5,00<br>
-                        Quantidade: 45<br>
-                        <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
-                        <button type="button" class="btn btn-warning" style="font-size:10px">Adicionar</button>
-                    </div>
-                    <div class="col gridRight gridProduto">
-                        <span class="produtoNome">Macarrão</span><br>
-                        Preço: R$ 2,00<br>
-                        Quantidade: 16<br>
-                        <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
-                        <button type="button" class="btn btn-warning" style="font-size:10px">Adicionar</button>
-                    </div>
-                    <div class="col gridRight gridProduto">
-                        <span class="produtoNome">Açucar</span><br>
-                        Preço: R$ 2,00<br>
-                        Quantidade: 16<br>
-                        <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
-                        <button type="button" class="btn btn-warning" style="font-size:10px">Adicionar</button>
-                    </div>
-                </div>
-            </div>
+        	</div>
 		</div>
 		</section>
 	</section>
