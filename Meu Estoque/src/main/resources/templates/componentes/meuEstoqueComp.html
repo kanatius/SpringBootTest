@@ -8,38 +8,16 @@
 	<section id="folha" th:fragment="meuEstoque">
 		<link rel="stylesheet" href="css/listarProd.css">
 		<section>
-		<legend>Meu Estoque</legend>
-		
-		<!-- Modal -->
-		<div id="myModal" class="modal fade" role="dialog">
-		  <div class="modal-dialog">
-		
-		    <!-- Modal content-->
-		    <div class="modal-content modal-sm">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal">&times;</button>
-		        <h4 class="modal-title">Modal Header</h4>
-		      </div>
-		      <div class="modal-body">
-		        <p>Some text in the modal.</p>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		      </div>
-		    </div>
-		
-		  </div>
-		</div>
-	
+		<legend>Meu Estoque</legend>	
         <div class="container">
             <div class="row" >
-                <div class="col gridProduto" th:each="produto, row : ${produtos}">
+                <div class="col gridProduto" th:each="produto : ${produtos}">
                     <span class="produtoNome" th:text="${produto.nome}"></span><br>
                     Preço: <span th:text="${produto.preco}">R$ 2,50</span>
 					<br>
                     Quantidade: <span th:text="${produto.quantidade}">25</span><br>
-                    <button type="button" class="btn btn-danger" style="font-size:10px">Remover</button>
-                    <button type="button" class="btn btn-warning" style="font-size:10px" data-toggle="modal" data-target="#myModal">Adicionar</button>
+                    <a th:href="@{/produto/remover?id={id} (id = ${produto.id})}"><button type="button" class="btn btn-danger" style="font-size:10px">Remover</button></a>
+                    <a th:href="@{/produto/cadastrarProduto?id={id} (id = ${produto.id})}"><button type="button" class="btn btn-info" style="font-size:10px" data-toggle="modal" data-target="#myModal">Editar</button></a>
                 	<br>
                 </div>
         	</div>

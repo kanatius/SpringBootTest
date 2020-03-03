@@ -3,19 +3,20 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="UTF-8">	
 	</head>
 	<body>
 	
 	<div th:fragment="cadastro" id="cadastroProdutoDiv">
 		<link rel="stylesheet" href="css/cadastroProduto.css">
 		<section>
-		<legend>Cadastrar Produto</legend>
+		<legend th:text="${produto.id == 0} ? 'Cadastrar Produto' : 'Editar Produto'">Cadastrar Produto</legend>
             <div id="folha">
-                <form th:action="@{/produto/cadastrar}" th:object="${produto}">      
-                    <div class="form-group row">
+                <form th:action="${produto.id == 0} ? @{/produto/cadastrar} : @{/produto/editar}" th:object="${produto}">      
+                    	<input hidden th:field="*{id}">
+						<div class="form-group row">
                         <label for="produto" class="col-sm-2 col-form-label">Nome do Produto</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-10">		
                             <input type="text" th:field="*{nome}" class="form-control" id="produto"
                                 placeholder="Digite o nome do produto aqui">
                         </div>
@@ -32,7 +33,7 @@
                             <input type="number" th:field="*{quantidade}" class="form-control" id="quantidade" placeholder="0">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success">Cadastrar</button>
+                    <button type="submit" th:text="${produto.id > 0} ? 'Salvar' : 'Cadastrar'" class="btn btn-success">Cadastrar</button>
                 </form>
             </div>
 		</section>

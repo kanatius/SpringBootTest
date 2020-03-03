@@ -29,6 +29,7 @@ public class ProdutoServiceImplem implements ProdutoService{
 
 	@Override
 	public void atualizar(Produto produto) {
+		produto.setEstoque(produtoDao.findById(produto.getId()).getEstoque());
 		produtoDao.update(produto);
 	}
 
