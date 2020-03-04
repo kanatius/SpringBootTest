@@ -6,18 +6,20 @@
 	<body>
 		
 	<section id="folha" th:fragment="meuEstoque">
-		<link rel="stylesheet" href="css/listarProd.css">
+		<link rel="stylesheet" href="/css/listarProd.css">
+		<script src="/js/meuEstoque.js"></script>
 		<section>
 		<legend>Meu Estoque</legend>	
         <div class="container">
             <div class="row" >
                 <div class="col gridProduto" th:each="produto : ${produtos}">
+					<div><button type="button" th:onclick="'removerProduto(' + ${produto.id} + ')'" class="close" style="color: #dc3545; margin-top: -5px;" aria-label="Close">x</button></div>
                     <span class="produtoNome" th:text="${produto.nome}"></span><br>
                     Preço: <span th:text="${produto.preco}">R$ 2,50</span>
 					<br>
                     Quantidade: <span th:text="${produto.quantidade}">25</span><br>
                     <a th:href="@{/produto/remover?id={id} (id = ${produto.id})}"><button type="button" class="btn btn-danger" style="font-size:10px">Remover</button></a>
-                    <a th:href="@{/produto/cadastrarProduto?id={id} (id = ${produto.id})}"><button type="button" class="btn btn-info" style="font-size:10px" data-toggle="modal" data-target="#myModal">Editar</button></a>
+                    <button type="button" th:onclick="'removerProduto(' + ${produto.id} + ')'" class="btn btn-info" style="font-size:10px" data-toggle="modal" data-target="#myModal">Editar</button>
                 	<br>
                 </div>
         	</div>

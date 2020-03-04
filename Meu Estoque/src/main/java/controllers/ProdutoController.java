@@ -54,4 +54,15 @@ public class ProdutoController {
 		produtoService.atualizar(produto);
 		return "redirect:/meuEstoque";
 	}
+	
+	@GetMapping("/remover")
+	public String remover(@RequestParam("id") Long id) {
+		
+		try {
+			this.produtoService.remover(id);
+		}catch(Exception e) {
+			
+		}
+		return "redirect:/meuEstoque";
+	}
 }

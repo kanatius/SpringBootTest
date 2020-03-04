@@ -23,8 +23,7 @@ public class ProdutoServiceImplem implements ProdutoService{
 
 	@Override
 	public void remover(Long id) {
-		produtoDao.remove(id);
-		
+		produtoDao.remove(id);	
 	}
 
 	@Override
