@@ -18,9 +18,11 @@
                     Preço: <span th:text="${produto.preco}">R$ 2,50</span>
 					<br>
                     Quantidade: <span th:text="${produto.quantidade}">25</span><br>
-                    <a th:href="@{/produto/remover?id={id} (id = ${produto.id})}"><button type="button" class="btn btn-danger" style="font-size:10px">Remover</button></a>
-                    <button type="button" th:onclick="'removerProduto(' + ${produto.id} + ')'" class="btn btn-info" style="font-size:10px" data-toggle="modal" data-target="#myModal">Editar</button>
-                	<br>
+                    <button type="button" th:onclick="'removerProduto(' + ${produto.id} + ')'" class="btn btn-danger" style="font-size:10px">Remover</button>
+					<a th:href="@{/produto/cadastrarProduto?id={id} (id = ${produto.id})}">
+						<button type="button"  class="btn btn-info" style="font-size:10px" data-toggle="modal" data-target="#myModal">Editar</button>
+					</a>
+						<br>
                 </div>
         	</div>
 		</div>
